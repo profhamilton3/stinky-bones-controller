@@ -87,7 +87,7 @@ joy_y_center = joystickbit.get_rocker_value(joystickbit.rockerType.Y)
 
 # Startup haptic + display
 joystickbit.Vibration_Motor(200)
-basic.show_icon(IconNames.ARROW_NORTH)
+basic.show_arrow(ArrowNames.NORTH)
 
 
 # ────────────────────────────────────────────────────────────
@@ -109,7 +109,7 @@ def send_cmd(cmd: number, icon):
 def on_p12():
     send_cmd(1, IconNames.HAPPY)
     basic.pause(200)
-    basic.show_icon(IconNames.ARROW_NORTH)
+    basic.show_arrow(ArrowNames.NORTH)
 joystickbit.on_button_event(
     joystickbit.JoystickBitPin.P12,
     joystickbit.ButtonType.DOWN,
@@ -120,7 +120,7 @@ joystickbit.on_button_event(
 def on_p13():
     send_cmd(2, IconNames.ASLEEP)
     basic.pause(200)
-    basic.show_icon(IconNames.ARROW_NORTH)
+    basic.show_arrow(ArrowNames.NORTH)
 joystickbit.on_button_event(
     joystickbit.JoystickBitPin.P13,
     joystickbit.ButtonType.DOWN,
@@ -131,7 +131,7 @@ joystickbit.on_button_event(
 def on_p14():
     send_cmd(3, IconNames.YES)
     basic.pause(200)
-    basic.show_icon(IconNames.ARROW_NORTH)
+    basic.show_arrow(ArrowNames.NORTH)
 joystickbit.on_button_event(
     joystickbit.JoystickBitPin.P14,
     joystickbit.ButtonType.DOWN,
@@ -142,7 +142,7 @@ joystickbit.on_button_event(
 def on_p15():
     send_cmd(4, IconNames.DIAMOND)
     basic.pause(200)
-    basic.show_icon(IconNames.ARROW_NORTH)
+    basic.show_arrow(ArrowNames.NORTH)
 joystickbit.on_button_event(
     joystickbit.JoystickBitPin.P15,
     joystickbit.ButtonType.DOWN,
@@ -157,19 +157,19 @@ joystickbit.on_button_event(
 def on_button_a():
     send_cmd(1, IconNames.HAPPY)
     basic.pause(200)
-    basic.show_icon(IconNames.ARROW_NORTH)
+    basic.show_arrow(ArrowNames.NORTH)
 input.on_button_pressed(Button.A, on_button_a)
 
 def on_button_b():
     send_cmd(2, IconNames.ASLEEP)
     basic.pause(200)
-    basic.show_icon(IconNames.ARROW_NORTH)
+    basic.show_arrow(ArrowNames.NORTH)
 input.on_button_pressed(Button.B, on_button_b)
 
 def on_logo_pressed():
     send_cmd(4, IconNames.DIAMOND)
     basic.pause(200)
-    basic.show_icon(IconNames.ARROW_NORTH)
+    basic.show_arrow(ArrowNames.NORTH)
 input.on_logo_event(TouchButtonEvent.PRESSED, on_logo_pressed)
 
 
@@ -237,26 +237,26 @@ def on_forever():
     if jy >= JOY_HI:
         # Joystick pushed up → move forward
         radio.send_number(5)
-        basic.show_icon(IconNames.ARROW_NORTH)
+        basic.show_arrow(ArrowNames.NORTH)
         last_send_time = now
     elif jy <= JOY_LO:
         # Joystick pushed down → move backward
         radio.send_number(8)
-        basic.show_icon(IconNames.ARROW_SOUTH)
+        basic.show_arrow(ArrowNames.SOUTH)
         last_send_time = now
     elif jx <= JOY_LO:
         # Joystick pushed left → turn left
         radio.send_number(6)
-        basic.show_icon(IconNames.ARROW_WEST)
+        basic.show_arrow(ArrowNames.WEST)
         last_send_time = now
     elif jx >= JOY_HI:
         # Joystick pushed right → turn right
         radio.send_number(7)
-        basic.show_icon(IconNames.ARROW_EAST)
+        basic.show_arrow(ArrowNames.EAST)
         last_send_time = now
     else:
         # Stick at rest / center zone — show neutral arrow
-        basic.show_icon(IconNames.ARROW_NORTH)
+        basic.show_arrow(ArrowNames.NORTH)
 
     basic.pause(50)
 
