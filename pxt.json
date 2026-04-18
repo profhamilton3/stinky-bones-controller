@@ -1,0 +1,24 @@
+{
+    "name": "stinky-bones-controller",
+    "description": "Stinky Bones Radio Controller — joystick:bit controller that steers the XGO dog with the analog joystick and sends start/stop/action commands via the four buttons. Pairs with stinky-bones-xgo. Educational Python project for THE Hamilton Essentials Foundation.",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "joystickbit": "github:tinkertanker/pxt-joystickbit#v1.0.3"
+    },
+    "files": [
+        "main.py",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "7.0.51",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "pyprj"
+}
